@@ -25,4 +25,4 @@ puts "2. Use IRB"
 puts "3. Extra calculation" #TODO
 puts "4. Research about floating point"
 puts "5. Rewrite with correct math"
-puts 3 + 2 + 1 -5 + 4 % 2 - 0.25 + 6 #TODO not good enough
+puts 3 + 2 + 1 -5 + 4 % 2 - 1.0 / 4 + 6
