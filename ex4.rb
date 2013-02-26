@@ -1,3 +1,6 @@
+# Exercise 4: Variables And Names
+puts "Exercise 4: Variables And Names"
+
 #assign 100 to cars var
 cars = 100
 

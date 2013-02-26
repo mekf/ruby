@@ -1,3 +1,6 @@
+# Exercise 3: Numbers And Math
+puts "Exercise 3: Numbers And Math"
+
 puts "Chickens counting:"
 
 puts "Hens", 25 + 30 / 6

@@ -1,3 +1,6 @@
+# Exercise 5: More Variables And Printing
+puts "Exercise 5: More Variables And Printing"
+
 name = 'Minh Ha'
 age = 26
 height = 179 # cm
