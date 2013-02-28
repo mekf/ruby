@@ -9,7 +9,7 @@ puts 'Exercise 16: Reading And Writing Files'
 
 # get the file name and the script name
 filename = ARGV.first
-script = "$0"
+script = $0
 
 # open the file, read it, print it, then close the connection
 puts
