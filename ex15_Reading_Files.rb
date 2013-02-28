@@ -47,6 +47,9 @@ puts <<ANSWER
 \s example:
 \s filename = some_file_name
 \s File.open(filename)
+
+\s EDIT: IRB does take a typed in arg. just wrap the arg in ""
+\s e.g: File.open("file.txt")
 ANSWER
 
 puts
