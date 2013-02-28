@@ -1,0 +1,11 @@
+The Book of Mozilla is a computer Easter egg found in the Netscape and Mozilla series of web browsers. It is viewed by directing the browser to about:mozilla.
+
+There is no real book titled The Book of Mozilla. However, apparent quotations hidden in Netscape and Mozilla give this impression by revealing passages in the style of apocalyptic literature, such as the Book of Revelation in the Bible.
+
+When about:mozilla is typed into the location bar, various versions of these browsers display a cryptic message in white text on a maroon background in the browser window.
+
+There are six official verses of The Book of Mozilla which have been included in shipping releases, although various unofficial verses can be found on the World Wide Web. All six official verses have scriptural chapter and verse references, although these are actually references to important dates in the history of Netscape and Mozilla.
+
+The six verses all refer to the activities of a fearsome-sounding "beast". In its early days, Netscape Communications Corporation had a green fire-breathing dragon-like lizard mascot, known as Mozilla (after the code name for Netscape Navigator 1.0). From this, it can be conjectured that the "beast" referred to in The Book of Mozilla is a type of fire-breathing lizard, which can be viewed as a metaphor for, or personification of Netscape.
+
+While part of the appeal of The Book of Mozilla comes from the mysterious nature, a knowledge of the history of Netscape and Mozilla can be used to extract some meaning from the verses. Furthermore, the Book of Mozilla page has annotations for each of the first, second, third and fifth verses hidden as comments in its HTML source code.[6] These comments were written by Valerio Capello in May 2004 and were added to the Mozilla Foundation site by Nicholas Bebout in October that year. Neither Capello nor Bebout are 'core' Mozilla decision-makers; and there is no evidence that Capello's interpretations received any high-level approval from the senior management of the Mozilla Foundation.
