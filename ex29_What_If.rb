@@ -33,3 +33,14 @@ end
 if people == dogs
   puts "People are dogs???"
 end
+
+puts "\nExtra Credit"
+puts "2. Other boolean expressions from Ex. 27:"
+
+if people != cats && people != dogs && dogs != cats
+  puts "none are equal"
+end
+
+if people != cats && !(people != dogs)
+  puts "seems like dogs are on equal footing with human!?"
+end
