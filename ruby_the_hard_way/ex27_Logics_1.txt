@@ -1,0 +1,41 @@
+# Memorizing logics
+
+NOT
+NOT false	(true)
+NOT true	(false)
+
+OR
+true OR false	(true)
+true OR true	(true)
+false OR true	(true)
+false OR false	(false)
+
+AND
+true AND false	(false)
+true AND true	(true)
+false AND true	(false)
+false AND false	(false)
+
+NOT OR
+NOT (true OR false)		(false)
+NOT (true OR true)		(false)
+NOT (false OR true)		(false)
+NOT (false OR false)	(true)
+
+NOT AND
+NOT (true AND false)	(true)
+NOT (true AND true)		(false)
+NOT (false AND true)	(true)
+NOT (false AND false)	(true)
+
+!=
+1 != 0	(true)
+1 != 1	(false)
+0 != 1	(false)
+0 != 0	(true)
+
+==
+1 == 0	(false)
+1 == 1	(true)
+0 == 1	(false)
+0 == 0	(true)
