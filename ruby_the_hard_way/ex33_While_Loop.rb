@@ -1,18 +1,32 @@
 puts "Exercise 33: While Loop"
 
-i = 0
-num = []
+def while_loop(number, increment)
+  i = 0
+  num = []
+  
+  while i < number
+    puts "\n# at the top of while: #{i}"
+    num.push(i)
 
-while i < 6
-  puts "# at the top of while: #{i}"
-  num.push(i)
-
-  i += 1
-  puts "# now: #{num}"
-  puts "# at the bottom of while: #{i}"
+    i += increment
+    puts "# now: #{num}"
+    puts "# at the bottom of while: #{i}"
+  end
 end
 
-puts "\nThe number:"
-for i in num
-  puts i
-end
+# puts "\nThe number:"
+# for i in num
+#   puts i
+# end
+
+puts "\nExtra Credit:"
+
+puts "1. Convert while loop to a function"
+puts "2. Using a number for increment"
+
+print "What's the numer for the bottom of the loop: "
+number = gets.chomp.to_i
+print "What's the numer for the increment: "
+increment = gets.chomp.to_i
+
+while_loop(number, increment)
