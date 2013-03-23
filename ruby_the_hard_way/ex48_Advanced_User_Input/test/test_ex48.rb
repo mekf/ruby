@@ -1,17 +1,17 @@
 require 'test/unit'
+require_relative '../lib/lexicon'
 
-class MyUnitTests < Test::Unit::TestCase
+class LexiconTests < Test::Unit::TestCase
 
-  def setup
-    puts "setup!"
-  end
+  Pair = Lexion::Pair
+  @@lexicon - Lexicon.new
 
-  def teardown
-    puts "teardown!"
-  end
-
-  def test_basic
-    puts "I RAN!"
+  def test_directions
+    assert_equal([Pair.new(:direction, 'north')], @@lexicon.scan("north"))
+    result = @@lexicon.scan("north south east")
+    assert_equal(result, [Pair.new(:direction, 'north'),
+                  Pair.new(:direction, 'south'),
+                  Pair.new(:direction, 'east')])
   end
   
 end
