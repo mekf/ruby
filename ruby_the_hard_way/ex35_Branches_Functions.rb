@@ -9,8 +9,11 @@ def gold_room
 
   prompt; next_move = gets.chomp
 
-  # not good
-  if next_move.include? "0" or next_move.include? "1"
+  # if next_move.include? "0" or next_move.include? "1"
+  # not good, because something like this will not work: 23
+  # solution: use regular expression
+  # this one means: a string with at least 1 digit in it
+  if next_move =~ /^\d+$/
     how_much = next_move.to_i
   else
     dead("Man, learn to type a number!")
@@ -49,17 +52,17 @@ def bear_room
   end
 end
 
-def cthulu_room()
+def cthulu_room
   puts "Here you see the great evil Cthulu."
   puts "He, it, whatever stares at you and you go insane."
   puts "Do you flee for your life or eat your head?"
   prompt; next_move = gets.chomp
   if next_move.include? "flee"
-    start()
+    start
   elsif next_move.include? "head"
     dead("Well that was tasty!")
   else
-    cthulu_room()
+    cthulu_room
   end
 end
 
@@ -74,12 +77,12 @@ def start
   puts "Which one do you take?"
   prompt; next_move = gets.chomp
   if next_move == "left"
-    bear_room()
+    bear_room
   elsif next_move == "right"
-    cthulu_room()
+    cthulu_room
   else
     dead("You stumble around the room until you starve.")
   end
 end
 
-start()      
+start
