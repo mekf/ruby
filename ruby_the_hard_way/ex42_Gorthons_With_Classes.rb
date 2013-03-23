@@ -1,4 +1,4 @@
-require './ex41_texts'
+require './ex42_texts'
 
 puts "Exercise 42: Gorthons Are Getting Classy"
 
@@ -11,6 +11,13 @@ class Game
       "I have a small puppy that's better at this."
     ]
     @start = start
+    
+    # Getting Textes
+    @central_corridor_text = Ex42Text.central_corridor_text
+    @laser_weapon_armory_text = Ex42Text.laser_weapon_armory_text
+    @the_bridge_text = Ex42Text.the_bridge_text
+    @escape_pod_text = Ex42Text.escape_pod_text
+    
     puts "in init @start = " + @start.inspect
   end
 
