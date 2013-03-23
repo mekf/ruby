@@ -4,7 +4,7 @@ require_relative '../lib/lexicon'
 class LexiconTests < Test::Unit::TestCase
 
   Pair = Lexicon::Pair
-  @@lexicon - Lexicon.new
+  @@lexicon = Lexicon.new
 
   def test_directions
     assert_equal([Pair.new(:direction, 'north')], @@lexicon.scan("north"))
