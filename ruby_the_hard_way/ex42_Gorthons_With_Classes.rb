@@ -4,20 +4,7 @@ puts "Exercise 42: Gorthons Are Getting Classy"
 
 class Game
   def initialize(start)
-    @quips = [
-      "You died. You kinda suck at this.",
-      "Nice job, you died ...jackass.",
-      "Such a luser.",
-      "I have a small puppy that's better at this."
-    ]
     @start = start
-    
-    # Getting Textes
-    @central_corridor_text = Ex42Text.central_corridor_text
-    @laser_weapon_armory_text = Ex42Text.laser_weapon_armory_text
-    @the_bridge_text = Ex42Text.the_bridge_text
-    @escape_pod_text = Ex42Text.escape_pod_text
-    
     puts "in init @start = " + @start.inspect
   end
 
@@ -26,6 +13,7 @@ class Game
   end
 
   def death
+    @quips = Ex42Text.quips
     puts @quips[rand(@quips.length)]
     # puts quips.sample(1)
     Process.exit(1)
@@ -43,6 +31,7 @@ class Game
   end
 
   def central_corridor
+    @central_corridor_text = Ex42Text.central_corridor_text
     puts @central_corridor_text[:start]
     prompt; action = gets.chomp
 
@@ -62,6 +51,7 @@ class Game
   end
 
   def laser_weapon_armory
+    @laser_weapon_armory_text = Ex42Text.laser_weapon_armory_text
     puts @laser_weapon_armory_text[:keypad_start]
     code = "%s%s%s" % [rand(9) + 1, rand(9) + 1, rand(9) + 1]
     puts "cheat: #{code}"
@@ -85,6 +75,7 @@ class Game
   end
 
   def the_bridge
+    @the_bridge_text = Ex42Text.the_bridge_text
     puts @the_bridge_text[:bridge_start]
     prompt; action = gets.chomp
 
@@ -101,6 +92,7 @@ class Game
   end
 
   def escape_pod
+    @escape_pod_text = Ex42Text.escape_pod_text
     puts @escape_pod_text[:pod_start]
     good_pod = rand(5) + 1
     puts "cheat: #{good_pod}"

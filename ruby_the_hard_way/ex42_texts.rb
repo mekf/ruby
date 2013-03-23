@@ -1,4 +1,13 @@
 module Ex42Text
+  def self.quips
+    text = [
+      "You died. You kinda suck at this.",
+      "Nice job, you died ...jackass.",
+      "Such a luser.",
+      "I have a small puppy that's better at this."
+    ]
+  end
+
   def self.central_corridor_text
     text = {
       start: "The Gothons of Planet Percal #25 have invaded your ship and destroyed
