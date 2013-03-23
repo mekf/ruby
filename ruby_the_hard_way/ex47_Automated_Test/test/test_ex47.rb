@@ -1,18 +1,13 @@
 require 'test/unit'
-require '../lib/ex47'
+require_relative '../lib/ex47'
 
 class MyUnitTests < Test::Unit::TestCase
 
-  def setup
-    puts "setup!"
+  def test_room
+    gold = Room.new("GoldRoom",
+      """This room has gold in it you can grap.
+      There's a door to the north.""")
+    assert_equal(gold.name, "GoldRoom")
+    assert_equal(gold.paths, {})
   end
-
-  def teardown
-    puts "teardown!"
-  end
-
-  def test_basic
-    puts "I RAN!"
-  end
-  
 end
