@@ -1,25 +1,40 @@
 class Lexicon
   def initialize
     @lexicon = {
-      directions: "north, south, east, west, down, up, left, right, back",
-      verbs: "go, stop, kill, eat",
-      stops: "the, in, of, from, at, it",
-      nouns: "door, bear, princess, cabinet",
-      numbers: "method_check_number"
+      'north' => 'direction', 'south' => 'direction', 'east' => 'direction', 
+      'go' => 'verb', 'kill' => 'verb', 'eat' => 'verb', 
+      'the' => 'stop', 'in' => 'stop', 'of' => 'stop',
+      'bear' => 'noun', 'princess' => 'noun',
     }
   end
 
-  def break_words(string)
+  def scan(input)
+    # convert_to_number(input)
+    words = input.split
+    match_words(words)
   end
 
-  def scan(word)
-  end
-
-  class Pair
-    def initialize(token, word)
-      @token = token
-      @word = word
+  def convert_to_number(string)
+    begin
+      string.to_i
+    rescue ArgumentError
+      return nil
     end
-  
   end
+
+  def match_words(words)
+    words.map do |word| 
+      if convert_to_number(word)
+        classification = 'number'
+      elsif word != @lexicon[word]
+        classification = 'error'
+      else
+        classification = @lexicon[word].to_sym
+      end
+
+      Pair.new(classification, word)
+    end
+  end
+
 end
+Pair = Struct.new(:token, :word)
