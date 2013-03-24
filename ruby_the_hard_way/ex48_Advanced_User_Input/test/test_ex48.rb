@@ -7,34 +7,34 @@ class LexiconTests < Test::Unit::TestCase
   @@lexicon = Lexicon.new
 
   def test_directions
-    assert_equal([Pair.new(:direction, 'north')], @@lexicon.scan("north"))
+    assert_equal([Pair.new(:direction, "north")], @@lexicon.scan("north"))
     result = @@lexicon.scan("north south east")
-    assert_equal(result, [Pair.new(:direction, 'north'),
-                  Pair.new(:direction, 'south'),
-                  Pair.new(:direction, 'east')])
+    assert_equal(result, [Pair.new(:direction, "north"),
+                  Pair.new(:direction, "south"),
+                  Pair.new(:direction, "east")])
   end
 
   def test_verbs
-    assert_equal(@@lexicon.scan("go"), [Pair.new(:verb, 'go')])
+    assert_equal(@@lexicon.scan("go"), [Pair.new(:verb, "go")])
     result = @@lexicon.scan("go kill eat")
-    assert_equal(result, [Pair.new(:verb, 'go'),
-                  Pair.new(:verb, 'kill'),
-                  Pair.new(:verb, 'eat')])
+    assert_equal(result, [Pair.new(:verb, "go"),
+                  Pair.new(:verb, "kill"),
+                  Pair.new(:verb, "eat")])
   end
 
   def test_stops
-    assert_equal(@@lexicon.scan("the"), [Pair.new(:verb, 'the')])
+    assert_equal(@@lexicon.scan("the"), [Pair.new(:verb, "the")])
     result = @@lexicon.scan("the in of")
-    assert_equal(result, [Pair.new(:stop, 'the'),
-                  Pair.new(:stop, 'in'),
-                  Pair.new(:stop, 'of')])
+    assert_equal(result, [Pair.new(:stop, "the"),
+                  Pair.new(:stop, "in"),
+                  Pair.new(:stop, "of")])
   end
   
   def test_nouns
-    assert_equal(@@lexicon.scan("bear"), [Pair.new(:noun, 'bear')])
+    assert_equal(@@lexicon.scan("bear"), [Pair.new(:noun, "bear")])
     result = @@lexicon.scan("bear princess")
-    assert_equal(result, [Pair.new(:noun, 'bear'),
-                  Pair.new(:noun, 'princess')])
+    assert_equal(result, [Pair.new(:noun, "bear"),
+                  Pair.new(:noun, "princess")])
   end
 
   def test_numbers
@@ -45,11 +45,11 @@ class LexiconTests < Test::Unit::TestCase
   end
 
   def test_error
-    assert_equal(@@lexicon.scan("ASDFADFASDF"), [Pair.new(:error, 'ASDFADFASDF')])
+    assert_equal(@@lexicon.scan("ASDFADFASDF"), [Pair.new(:error, "ASDFADFASDF")])
     result = @@lexicon.scan("bear IAS princess")
-    assert_equal(result, [Pair.new(:noun, 'bear'),
-                  Pair.new(:error, 'IAS'),
-                  Pair.new(:noun, 'princess')])
+    assert_equal(result, [Pair.new(:noun, "bear"),
+                  Pair.new(:error, "IAS"),
+                  Pair.new(:noun, "princess")])
   end
 
 end

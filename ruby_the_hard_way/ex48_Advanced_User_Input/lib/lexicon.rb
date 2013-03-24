@@ -1,14 +1,25 @@
 class Lexicon
-
-  def scan(arg)
+  def initialize
+    @lexicon = {
+      directions: "north, south, east, west, down, up, left, right, back",
+      verbs: "go, stop, kill, eat",
+      stops: "the, in, of, from, at, it",
+      nouns: "door, bear, princess, cabinet",
+      numbers: "method_check_number"
+    }
   end
 
-end
+  def break_words(string)
+  end
 
-class Pair
-  class << Lexicon
-    def initialize(arg1, arg2)
+  def scan(word)
+  end
+
+  class Pair
+    def initialize(token, word)
+      @token = token
+      @word = word
     end
-    
+  
   end
 end
