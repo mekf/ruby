@@ -1,15 +1,14 @@
 class Lexicon
   def initialize
     @lexicon = {
-      'north' => 'direction', 'south' => 'direction', 'east' => 'direction', 
-      'go' => 'verb', 'kill' => 'verb', 'eat' => 'verb', 
-      'the' => 'stop', 'in' => 'stop', 'of' => 'stop',
-      'bear' => 'noun', 'princess' => 'noun',
+      'north' => 'direction', 'south' => 'direction', 'east' => 'direction', 'west' => 'direction', 'down' => 'direction', 'up' => 'direction'
+      'go' => 'verb', 'kill' => 'verb', 'eat' => 'verb', 'stop' => 'verb',
+      'the' => 'stop', 'in' => 'stop', 'of' => 'stop', 'from' => 'stop', 'at' => 'stop', 'it' => 'stop'
+      'door' => 'noun', 'bear' => 'noun', 'princess' => 'noun', 'cabinet' => 'noun'
     }
   end
 
   def scan(input)
-    # convert_to_number(input)
     words = input.split
     match_words(words)
   end
