@@ -2,6 +2,7 @@ Pair = Struct.new(:token, :word)
 class Lexicon
   def initialize
     @lexicon = {
+      # direction: 'north, south,'
       'north' => 'direction', 'south' => 'direction', 'east' => 'direction', 'west' => 'direction', 'down' => 'direction', 'up' => 'direction',
       'go' => 'verb', 'kill' => 'verb', 'eat' => 'verb', 'stop' => 'verb',
       'the' => 'stop', 'in' => 'stop', 'of' => 'stop', 'from' => 'stop', 'at' => 'stop', 'it' => 'stop',
@@ -36,3 +37,5 @@ class Lexicon
   end
 
 end
+
+#REDO
