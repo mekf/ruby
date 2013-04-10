@@ -35,6 +35,8 @@ def __
   if RUBY_VERSION < "1.9"
     value
   else
+    # I have no idea what this method is doing. I just want to see if this monkey fixed the issue of having undefined variable
+    value19 = nil
     (value19 == :mu) ? value : value19
   end
 end
