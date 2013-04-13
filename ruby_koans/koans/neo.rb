@@ -31,18 +31,16 @@ end
 
 # Standard, generic replacement value.
 # If value19 is given, it is used in place of value for Ruby 1.9.
-def __
+def __(value="FILL ME IN", value19=:mu)
   if RUBY_VERSION < "1.9"
     value
   else
-    # I have no idea what this method is doing. I just want to see if this monkey fixed the issue of having undefined variable
-    value19 = nil
     (value19 == :mu) ? value : value19
   end
 end
 
 # Numeric replacement value.
-def _n_
+def _n_(value=999999, value19=:mu)
   if RUBY_VERSION < "1.9"
     value
   else
@@ -51,7 +49,7 @@ def _n_
 end
 
 # Error object replacement value.
-def ___
+def ___(value=FillMeInError, value19=:mu)
   if RUBY_VERSION < "1.9"
     value
   else
@@ -61,7 +59,7 @@ end
 
 # Method name replacement.
 class Object
-  def ____
+  def ____(method=nil)
     if method
       self.send(method)
     end
