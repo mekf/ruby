@@ -1,6 +1,0 @@
-dist
-.project_env.rc
-.path_progress
-.rvmrc
-*.rbc
-koans/*
