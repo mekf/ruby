@@ -24,16 +24,26 @@ def triangle(a, b, c)
     :scalene
   end
 end
-
-def equal_sides_count(*args)
-  if args[0] == args[1] and args[0] == args[2]
+def equal_sides_count(a, b, c)
+  if a == b and a == c
     3
-  elsif args[0] != args[1] and args[0] != args[2] and args[1] != args[2]
+  elsif a != b and a != c and b != c
     0
   else
     2
   end
 end
+
+# only playing around with *args
+# def equal_sides_count(*args)
+#   if args[0] == args[1] and args[0] == args[2]
+#     3
+#   elsif args[0] != args[1] and args[0] != args[2] and args[1] != args[2]
+#     0
+#   else
+#     2
+#   end
+# end
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError < StandardError
