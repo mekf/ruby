@@ -24,6 +24,7 @@ def triangle(a, b, c)
     :scalene
   end
 end
+
 def equal_sides_count(a, b, c)
   if a == b and a == c
     3
