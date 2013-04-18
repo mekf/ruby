@@ -32,17 +32,41 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 # You need to write this method
 def score(dices, score=0)
   unless dices.empty?
-    score += scores_1(dices) + scores_5(dices)
+    score += scores_1_5(1, dices) + scores_1_5(5, dices)
+    # score += scores_1(dices) + scores_5(dices) # OLD
 
     for i in 2..6 do
       next if i == 5
       score += scores_triple(i) if dices.count(i) >= 3
     end
   end
+  score
+end
+
+def scores_1_5(dice, dices, score=0, count = 0)  
+  if dice == 1
+    reward = 100; triple_reward = 1000
+  else
+    reward = 50;  triple_reward = 100 * 5
+  end
+  
+  count = dices.count(dice) if dices.include?(dice)
+  unless count == 0
+    if 1 <= count and count < 3
+      score = reward * count
+    else
+      score = triple_reward + reward * (count - 3) # if there're more than 3 (1 | 5)
+    end
+  end
 
   score
 end
 
+def scores_triple(dice)
+  score = 100 * dice
+end
+
+# OLD
 def scores_1(dices, score=0, count=0)
   count = dices.count(1) if dices.include?(1)
   unless count == 0
@@ -67,10 +91,7 @@ def scores_5(dices, score=0, count=0)
   score
 end
 
-def scores_triple(dice)
-  score = 100 * dice
-end
-
+# TEST
 class AboutScoringProject < Neo::Koan
   def test_score_of_an_empty_list_is_zero
     assert_equal 0, score([])
