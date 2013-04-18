@@ -31,65 +31,104 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 # You need to write this method
 def score(dices, score=0)
-  unless dices.empty?
-    score += scores_1_5(1, dices) + scores_1_5(5, dices)
-    # score += scores_1(dices) + scores_5(dices) # OLD
-
-    for i in 2..6 do
-      next if i == 5
-      score += scores_triple(i) if dices.count(i) >= 3
-    end
+  (1..6).each do |dice|
+    count = dices.select { |n| n == dice }.size
+    while count > 0 do
+      if count >= 3
+        score += (dice == 1) ? 1000 : 100 * dice
+        count -= 3
+      elsif dice == 5
+        score += 50 * count
+        count = 0
+      elsif dice == 1
+        score += 100 * count
+        count = 0
+      else
+        count = 0
+      end
+    end # while
   end
   score
 end
 
-def scores_1_5(dice, dices, score=0, count = 0)  
-  if dice == 1
-    reward = 100; triple_reward = 1000
-  else
-    reward = 50;  triple_reward = 100 * 5
-  end
+# SECOND ATTEMPT --
+# def score(dices, score=0)
+#   unless dices.empty?
+#     score += scores_1_5(1, dices) + scores_1_5(5, dices)
+#     for i in 2..6 do
+#       next if i == 5
+#       score += scores_triple(i) if dices.count(i) >= 3
+#     end
+#   end
+#   score
+# end
+
+# def scores_1_5(dice, dices, score=0, count = 0)  
+#   if dice == 1
+#     reward = 100; triple_reward = 1000
+#   else
+#     reward = 50;  triple_reward = 100 * 5
+#   end
   
-  count = dices.count(dice) if dices.include?(dice)
-  unless count == 0
-    if 1 <= count and count < 3
-      score = reward * count
-    else
-      score = triple_reward + reward * (count - 3) # if there're more than 3 (1 | 5)
-    end
-  end
+#   count = dices.count(dice) if dices.include?(dice)
+#   unless count == 0
+#     if 1 <= count and count < 3
+#       score = reward * count
+#     else
+#       score = triple_reward + reward * (count - 3)
+#     end
+#   end
 
-  score
-end
+#   score
+# end
 
-def scores_triple(dice)
-  score = 100 * dice
-end
+# def scores_triple(dice)
+#   score = 100 * dice
+# end
+# SECOND ATTEMPT ++
 
-# OLD
-def scores_1(dices, score=0, count=0)
-  count = dices.count(1) if dices.include?(1)
-  unless count == 0
-    if 1 <= count and count < 3
-      score = 100 * count
-    else
-      score = 1000 - 100 * (count - 3)
-    end
-  end
-  score 
-end
+# FIRST ATTEMPT --
+# def score(dices, score=0)
+#   unless dices.empty?
+    
+#     score += scores_1(dices) + scores_5(dices)
 
-def scores_5(dices, score=0, count=0)
-  count = dices.count(5) if dices.include?(5)
-  unless count == 0
-    if 1 <= count and count < 3
-      score = 50 * count
-    else
-      score = 100 * 5 + 50 * (count - 3) 
-    end
-  end
-  score
-end
+#     for i in 2..6 do
+#       next if i == 5
+#       score += scores_triple(i) if dices.count(i) >= 3
+#     end
+#   end
+#   score
+# end
+
+# def scores_1(dices, score=0, count=0)
+#   count = dices.count(1) if dices.include?(1)
+#   unless count == 0
+#     if 1 <= count and count < 3
+#       score = 100 * count
+#     else
+#       score = 1000 - 100 * (count - 3)
+#     end
+#   end
+#   score 
+# end
+
+# def scores_5(dices, score=0, count=0)
+#   count = dices.count(5) if dices.include?(5)
+#   unless count == 0
+#     if 1 <= count and count < 3
+#       score = 50 * count
+#     else
+#       score = 100 * 5 + 50 * (count - 3) 
+#     end
+#   end
+#   score
+# end
+
+# def scores_triple(dice)
+#   score = 100 * dice
+# end
+# FIRST ATTEMPT ++
 
 # TEST
 class AboutScoringProject < Neo::Koan
