@@ -1,3 +1,4 @@
+# mock output object pg.61
 class Output
   def messages
     @messages ||= []
