@@ -25,14 +25,15 @@ class Marker
   end
 
   def total_match_count
-    count = 0
     secret = @secret.split('')
-    @guess.split('').map do |n|
-      if secret.include?(n)
-        secret.delete_at(secret.index(n))
-        count += 1
-      end
+    @guess.split('').inject(0) do |count, n|
+      count + (delete_from_secret(secret, n) ? 1 : 0)
     end
-    count
+  end
+
+  # code.index returns the index of the first object for which the block returns true
+  # returns nil if no match is found
+  def delete_from_secret(code, n)
+    code.delete_at(code.index(n)) if code.index(n)
   end
 end
