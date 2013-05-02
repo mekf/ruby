@@ -14,4 +14,5 @@ at_exit { puts "secret_code: #{secret_code}" }
 
 while guess = gets.chomp
   game.guess(guess)
+  exit if guess == secret_code
 end
