@@ -4,25 +4,41 @@
 # 129 Ponsonby Road, Ponsonby
 # Auckland
 # 09 3765329
+#
+# {
+#   "name": "Bhana Brothers Fruiterers",
+#   "address": "129 Ponsonby Road, Ponsonby",
+#   "region": "Auckland",
+#   "phone": "09 3765329"
+# },
 
-source = File.open('locations')
-target = File.open('locations.json', 'w')
+source_file = File.open('locations')
+target_file = File.open('locations.json', 'w')
 
-lines = source.readlines
+@target = target_file
+@target.truncate(0)  # clean the file
+@lines  = source_file.readlines
 
-# for i in 0...lines.length
-#   puts "#{i} :" + lines[i]
-# end
-
-1.times do
-  i = 0
-  target.write("{")
-  target.write("\n\t" + '"name":'    + "\s\"#{lines[i].strip}\",")
-  target.write("\n\t" + '"address":' + "\s\"#{lines[i + 1].strip}\",")
-  target.write("\n\t" + '"city":'    + "\s\"#{lines[i + 2].strip}\",")
-  target.write("\n\t" + '"phone":'   + "\s\"#{lines[i + 3].strip}\"")
-  target.write("\n},")
+def write_line(num)
+  @target.write("\n\t" + '"name":'    + "\s\"#{@lines[num].strip}\",")
+  @target.write("\n\t" + '"address":' + "\s\"#{@lines[num + 1].strip}\",")
+  @target.write("\n\t" + '"region":'  + "\s\"#{@lines[num + 2].strip}\",")
+  @target.write("\n\t" + '"phone":'   + "\s\"#{@lines[num + 3].strip}\"")
 end
 
-source.close
-target.close
+i = 0
+while i < @lines.length
+  @target.write("{")
+  write_line(i)
+  
+  if i < @lines.length - 4
+    @target.write("\n},\n")
+  else
+    @target.write("\n}")
+  end
+  
+  i += 4
+end
+
+source_file.close
+target_file.close
