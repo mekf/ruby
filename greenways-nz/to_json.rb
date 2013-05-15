@@ -30,6 +30,7 @@ def write_entry
   i = 0
   while i < @lines.length
     @target.write("\t{")
+    
     write_line(i)
     
     if i < @lines.length - 4
