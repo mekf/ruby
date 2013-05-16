@@ -20,23 +20,23 @@ target_file = File.open('locations.json', 'w')
 @lines  = source_file.readlines
 
 def write_line(num)
-  @target.write("\n\t\t" + '"name":'    + "\s\"#{@lines[num].strip}\",")
-  @target.write("\n\t\t" + '"address":' + "\s\"#{@lines[num + 1].strip}\",")
-  @target.write("\n\t\t" + '"region":'  + "\s\"#{@lines[num + 2].strip}\",")
-  @target.write("\n\t\t" + '"phone":'   + "\s\"#{@lines[num + 3].strip}\"")
+  @target.write("\n\t\t\t" + '"name":'    + "\s\"#{@lines[num].strip}\",")
+  @target.write("\n\t\t\t" + '"address":' + "\s\"#{@lines[num + 1].strip}\",")
+  @target.write("\n\t\t\t" + '"region":'  + "\s\"#{@lines[num + 2].strip}\",")
+  @target.write("\n\t\t\t" + '"phone":'   + "\s\"#{@lines[num + 3].strip}\"")
 end
 
 def write_entry
   i = 0
   while i < @lines.length
-    @target.write("\t{")
+    @target.write("\t\t{")
     
     write_line(i)
     
     if i < @lines.length - 4
-      @target.write("\n\t},\n")
+      @target.write("\n\t\t},\n")
     else
-      @target.write("\n\t}")
+      @target.write("\n\t\t}")
     end
     
     i += 4
@@ -44,12 +44,12 @@ def write_entry
 end
 
 def write_outline
-  @target.write("{")
-  @target.write("\"locations\":\s")
-  @target.write("[\n")
+  @target.write("{" + "\n")
+  @target.write("\t\"locations\":\s")
+  @target.write("[" + "\n")
   write_entry
-  @target.write("\n]")
-  @target.write("}")
+  @target.write("\n\t]")
+  @target.write("\n}")
 end
 
 write_outline
