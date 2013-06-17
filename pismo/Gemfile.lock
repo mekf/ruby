@@ -1,0 +1,23 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    awesome_print (1.1.0)
+    chronic (0.9.1)
+    fast-stemmer (1.0.2)
+    mini_portile (0.5.0)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
+    pismo (0.7.4)
+      awesome_print
+      chronic
+      fast-stemmer
+      nokogiri
+      sanitize
+    sanitize (2.0.4)
+      nokogiri (~> 1.6.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  pismo
