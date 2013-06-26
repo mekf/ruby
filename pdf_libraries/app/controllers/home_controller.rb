@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-
   def index
   end
 
@@ -28,9 +27,5 @@ class HomeController < ApplicationController
         bottom: 0,
         left: 0
       }
-      # disable_smart_shrinking: true
-      
-      # use_xserver: true
   end
-
 end
