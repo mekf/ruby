@@ -10,12 +10,20 @@ class HomeController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render_pdf  
+        # render_wicked_pdf
+        render_princexml
       end
     end
   end
 
-  def render_pdf
+  def render_princexml
+    render pdf: 'file_name',
+      template: 'home/show.pdf.haml',
+      stylesheets: ['application']
+      # layout: 'pdf'
+  end
+
+  def render_wicked_pdf
     render pdf: 'file_name',
       template: 'home/show',
       format: [:pdf],
