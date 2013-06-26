@@ -6,7 +6,9 @@ class HomeController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render  :pdf => 'file_name'
+        render  pdf: 'file_name',
+                formats: [:html], 
+                handlers: [:haml]
       end
     end
   end
