@@ -1,5 +1,4 @@
-.content
-  %h1 Home#show
-  %p Find me in app/views/home/show.pdf.haml
+= wicked_pdf_stylesheet_link_tag 'application', :media => 'all'
 
-  = render partial: 'show_content'
+.content
+  = render partial: 'show_content.html.haml'
