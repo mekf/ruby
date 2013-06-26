@@ -34,6 +34,8 @@ class HomeController < ApplicationController
         right: 0,
         bottom: 0,
         left: 0
-      }
+      },
+      disable_javascript: false,
+      disable_smart_shrinking: false
   end
 end
