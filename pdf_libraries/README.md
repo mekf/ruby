@@ -1,13 +1,16 @@
 PDF Libraries
 ===
-## gems
+### gems
 wicked_pdf https://github.com/mileszs/wicked_pdf
 
-## wkhtmltopdf
-#### Ubuntu:
+### refs
+http://www.snikt.net/blog/2012/04/26/wicked-pdf/
+
+### wkhtmltopdf
+##### Ubuntu:
 sudo apt-get install wkhtmltopdf
 
-#### MacOSX:
+##### Mac OSX:
 * For some reason the homebrew method doesn't yield result
 * Grab the latest binary from: http://code.google.com/p/wkhtmltopdf
 * Drop that to Applications
