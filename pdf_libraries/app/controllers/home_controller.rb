@@ -17,6 +17,7 @@ class HomeController < ApplicationController
 
   def render_pdf
     render pdf: 'file_name',
+      # show_as_html: true, # uncomment -> html structure
       template: 'home/show',
       format: [:pdf],
       handlers: [:haml],
