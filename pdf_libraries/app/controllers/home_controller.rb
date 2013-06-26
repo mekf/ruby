@@ -1,14 +1,5 @@
 class HomeController < ApplicationController
 
-  PDF_OPTIONS = {
-    pdf: 'file_name',
-    template: 'home/show',
-    format: [:pdf],
-    handlers: [:haml],
-    page_size: 'A4',
-    use_xserver: true
-  }
-
   def index
   end
 
@@ -16,7 +7,12 @@ class HomeController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render PDF_OPTIONS
+        render pdf: 'file_name',
+          template: 'home/show',
+          format: [:pdf],
+          handlers: [:haml],
+          page_size: 'A4',
+          use_xserver: true
       end
     end
   end
