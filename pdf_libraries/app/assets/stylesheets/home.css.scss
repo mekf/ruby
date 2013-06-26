@@ -34,7 +34,7 @@
 .square-box {
   height: 50px;
   width: 50px;
-  background-color: #FF0000;
+  @include background(#FF0000, none, repeat);
   border: 1px solid #000000;
   /*@include box-shadow(0px, 0px, 10px, rgba(50, 50, 50, 0.75));*/
 }

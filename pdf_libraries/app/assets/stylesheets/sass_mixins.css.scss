@@ -1,3 +1,8 @@
+/* force background colour printing in chrome browser */
+@mixin background($color, $img, $repeat) {
+  background: $color $img $repeat scroll 0 0 !important;
+}
+
 @mixin border-radius($topLeft, $topRight, $botRight, $botLeft) {
   -webkit-border-radius: $topLeft $topRight $botRight $botLeft;
   -moz-border-radius: $topLeft $topRight $botRight $botLeft;
