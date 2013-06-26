@@ -2074,3 +2074,4 @@ ActionView::MissingTemplate - Missing template home/show with {:locale=>[:en], :
 
 
 Started POST "/__better_errors/28421540/variables" for 127.0.0.1 at 2013-06-26 16:03:09 +1200
+Connecting to database specified by database.yml

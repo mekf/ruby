@@ -17,8 +17,8 @@
 
 # minimal Rails specific artifacts
 db/*.sqlite3
-/log/*
-/tmp/*
+log/*
+tmp/*
 
 # database
 /config/database.yml
