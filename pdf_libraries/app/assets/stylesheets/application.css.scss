@@ -15,6 +15,7 @@
 @import 'sass_mixins';
 
 .content {
+  page-break-before: always;
   background: #FEFEFE;
   padding: 20px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
