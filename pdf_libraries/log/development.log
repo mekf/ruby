@@ -1899,3 +1899,178 @@ Processing by HomeController#show as PDF
   Rendered text template (0.0ms)
 Sent data file_name.pdf (2.7ms)
 Completed 200 OK in 125619ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-26 16:01:13 +1200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (1.6ms)
+Compiled bootstrap_and_overrides.css  (1854ms)  (pid 12954)
+Compiled application.css  (5ms)  (pid 12954)
+Compiled jquery.js  (6ms)  (pid 12954)
+Compiled jquery_ujs.js  (0ms)  (pid 12954)
+Compiled bootstrap-transition.js  (0ms)  (pid 12954)
+Compiled bootstrap-affix.js  (0ms)  (pid 12954)
+Compiled bootstrap-alert.js  (0ms)  (pid 12954)
+Compiled bootstrap-button.js  (0ms)  (pid 12954)
+Compiled bootstrap-carousel.js  (0ms)  (pid 12954)
+Compiled bootstrap-collapse.js  (0ms)  (pid 12954)
+Compiled bootstrap-dropdown.js  (0ms)  (pid 12954)
+Compiled bootstrap-modal.js  (0ms)  (pid 12954)
+Compiled bootstrap-scrollspy.js  (0ms)  (pid 12954)
+Compiled bootstrap-tab.js  (0ms)  (pid 12954)
+Compiled bootstrap-tooltip.js  (0ms)  (pid 12954)
+Compiled bootstrap-popover.js  (0ms)  (pid 12954)
+Compiled bootstrap-typeahead.js  (0ms)  (pid 12954)
+Compiled bootstrap.js  (56ms)  (pid 12954)
+Compiled application.js  (78ms)  (pid 12954)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (1.1ms)
+Completed 200 OK in 2021ms (Views: 2020.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show" for 127.0.0.1 at 2013-06-26 16:01:18 +1200
+Processing by HomeController#show as HTML
+  Rendered home/show.html.haml within layouts/application (1.4ms)
+  Rendered layouts/_navigation.html.haml (0.3ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show.pdf" for 127.0.0.1 at 2013-06-26 16:01:21 +1200
+Processing by HomeController#show as PDF
+***************WICKED***************
+  Rendered home/show.pdf.haml (2.3ms)
+  Rendered text template (0.0ms)
+Sent data file_name.pdf (2.9ms)
+Completed 200 OK in 501ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/show" for 127.0.0.1 at 2013-06-26 16:03:05 +1200
+Processing by HomeController#show as HTML
+  Rendered home/show.html.haml within layouts/application (1.3ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (1.2ms)
+Completed 200 OK in 71ms (Views: 70.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show.pdf" for 127.0.0.1 at 2013-06-26 16:03:09 +1200
+Processing by HomeController#show as PDF
+***************WICKED***************
+Completed 500 Internal Server Error in 6ms
+
+ActionView::MissingTemplate - Missing template home/show with {:locale=>[:en], :formats=>[:pdf], :handlers=>[:erb, :builder, :coffee, :haml]}. Searched in:
+  * "/home/katze/Repos/lernen/ruby/pdf_libraries/app/views"
+:
+  actionpack (3.2.13) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.13) lib/action_view/lookup_context.rb:109:in `find'
+  actionpack (3.2.13) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.13) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:96:in `render_to_string'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:23:in `render_to_string'
+  wicked_pdf (0.9.6) lib/pdf_helper.rb:34:in `render_to_string_with_wicked_pdf'
+  wicked_pdf (0.9.6) lib/pdf_helper.rb:60:in `make_pdf'
+  wicked_pdf (0.9.6) lib/pdf_helper.rb:76:in `make_and_send_pdf'
+  wicked_pdf (0.9.6) lib/pdf_helper.rb:21:in `render_with_wicked_pdf'
+  app/controllers/home_controller.rb:9:in `block (2 levels) in show'
+  actionpack (3.2.13) lib/action_controller/metal/mime_responds.rb:196:in `call'
+  actionpack (3.2.13) lib/action_controller/metal/mime_responds.rb:196:in `respond_to'
+  app/controllers/home_controller.rb:6:in `show'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:414:in `_run__4063827152836888676__process_action__3872494233405667909__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.13) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.13) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:612:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__1626713244200792320__call__2574175692452102507__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (0.9.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (0.9.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (0.9.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.5) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.5) lib/rack/server.rb:268:in `start'
+  railties (3.2.13) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.13) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.13) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.13) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+
+Started POST "/__better_errors/28421540/variables" for 127.0.0.1 at 2013-06-26 16:03:09 +1200
