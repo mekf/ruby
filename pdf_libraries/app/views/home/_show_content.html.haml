@@ -1,11 +1,16 @@
 .content.a4
   .content-wrapper
     .content-header
-      %h3#content-header Content Header
+      %h3#keep-color Content Header
     .content-logo
-      content-logo
+      .logo
+        = image_tag('nyan-cat-cropped.png')
     .content-issue
-      content-issue
+      #keep-color.clearfix
+        %div{style:'float: left; width: 50%;'}
+          left-issue
+        %div{style:'float: right; width: 50%, text-align: right;'}
+          right-issue
     .content-abstract
       content-abstract
     .content-inner-wrapper
@@ -18,6 +23,7 @@
   .content.a4
     %h3 Content Partial Goes Here
 
+    / = image_tag('nyan-cat.jpg')
     = image_tag('http://i44.photobucket.com/albums/f27/mitsuminh/img-dir/nyan-cat_zpsc3cf8c2b.jpg')
 
     %p.justify

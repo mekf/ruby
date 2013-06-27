@@ -1,0 +1,65 @@
+@import 'sass_mixins';
+@import 'print_boilerplate';
+
+.a4 {
+  height: 297mm;
+  width: 210mm;
+}
+
+.content-wrapper {
+  width: 100%;
+}
+
+.content-inner-wrapper {
+  width: 100%;
+  @include background(#EEEEEE, none, repeat);
+}
+
+.content-inner-left {
+  float: left;
+  @include background(#EEEEEE, none, repeat);
+}
+
+.content-inner-right {
+  float: right;
+  @include background(#EEEEEE, none, repeat);
+}
+
+.content-header {
+  color: #FFFFFF;
+  text-align: center;
+  @include background(#FF0033, none, repeat);
+  @include no-paddings-margins;
+}
+
+.content-logo {
+  color: #FFFFFF;
+  @include background(#1975D1, none, repeat);
+}
+
+.content-issue {
+  width: 100%;
+  color: #FFFFFF;
+  @include background(#FF0033, none, repeat);
+  @include no-paddings-margins;
+}
+
+.content-abstract {
+  @include background(#EEEEEE, none, repeat);
+}
+
+.content-left {
+  width: 50%;
+  float: left;
+}
+
+.content-right {
+  width: 50%;
+  float: right;
+}
+
+@media only print {
+  #keep-color {
+    color: #FFFFFF !important;
+    }
+  }
