@@ -19,7 +19,8 @@ class HomeController < ApplicationController
   def render_princexml
     render pdf: 'file_name',
       template: 'home/show.pdf.haml',
-      stylesheets: ['application']
+      stylesheets: ['application'],
+      disposition: 'inline'
       # layout: 'pdf'
   end
 

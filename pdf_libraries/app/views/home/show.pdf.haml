@@ -1,5 +1,7 @@
-= wicked_pdf_stylesheet_link_tag 'application', :media => 'all'
-= wicked_pdf_javascript_include_tag 'application'
+/ = wicked_pdf_stylesheet_link_tag 'application', :media => 'all'
+/ = wicked_pdf_javascript_include_tag 'application'
+
+= stylesheet_link_tag 'application', :media => 'all'
 
 .content
   = render partial: 'show_content.html.haml'
